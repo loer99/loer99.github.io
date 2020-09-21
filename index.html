@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Love Nilsfors</title>
+
+    <script>
+
+        function showPage(option, button){
+            document.querySelectorAll('.textContent').forEach(text =>{
+                text.style.display = 'none';
+            });
+            document.querySelectorAll('button').forEach(options => {
+                options.style.color = 'rgb(0, 0, 0)';
+                options.style.background = 'transparent';
+
+            });
+            button.style.color = 'rgb(255, 255, 255)';
+            button.style.background = 'rgb(0, 0, 0)';
+            document.querySelector('#' + (option)).style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('button').forEach(button => {
+                button.onclick = function () {
+                    showPage(this.dataset.option, this);
+                }
+            })
+        });
+
+        document.addEventListener('DOMContentLoaded', function(){
+            showPage('about', document.querySelector('#start'));
+            updateTextPosition();
+        });
+
+        function updateTextPosition(){
+            document.querySelectorAll('.textContent').forEach(text => {
+                text.style.left = '' + 
+                (document.querySelector('#start').getBoundingClientRect().left - 8) + 'px';
+            });
+            document.querySelector('#about').style.left = '' + 
+                (document.querySelector('#start').getBoundingClientRect().left - 8) + 'px';
+
+        }
+
+        document.addEventListener('DOMContentLoaded', function(){
+            window.addEventListener('resize', updateTextPosition)
+        });
+        
+    </script>
+
+    <style>
+        *{
+            font-family: Avenir, "Helvetica Neue", sans-serif;
+        }
+
+        h1{
+            
+            font-weight: bold;
+        }
+
+        #me{
+            height: auto;
+            width: auto;
+            max-height: 200px;
+            max-width: initial;
+        }
+
+        #menu{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .menuOption{
+            cursor: pointer;
+            text-decoration: none;
+            border: transparent;
+            font-weight: bold;
+            font-size: 15px;
+            background: transparent;
+            height: 20pt;
+            align-self: center;
+        }
+
+        .menuOption:hover{
+
+            animation-name: colorFeedBack;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            background: black;
+
+        }
+
+        @keyframes colorFeedBack {
+            from {
+                color: rgb(0, 0, 0);
+                background: transparent;
+            }
+
+            to {
+
+                color: rgb(255, 255, 255);
+                background: rgb(0, 0, 0);
+            }
+        }
+    
+
+        @keyframes showContent {
+            
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+
+        }
+
+        .textContent{
+            animation-name: showContent;
+            animation-duration: 0.4s;
+            animation-fill-mode: forwards;
+            position: relative;
+            display: flex;
+            display: none;
+            text-align: left;
+        }
+
+        .textContent > p {
+            padding: 5px;
+            font-weight: bold;
+            background: black;
+            color: rgb(199, 255, 212);
+            width: fit-content;
+        }
+
+        #education > p{
+            color: white;
+            font-family: Avenir, "Helvetica Neue", sans-serif;
+            background: rgb(63, 63, 63);
+        }
+
+        .textContent > p > br{
+            text-indent: 30%;
+
+        }
+
+
+        .textContent > p > .course{
+        
+            color: rgb(146, 250, 175);
+        }
+
+        .textContent > p > .points{
+        
+            color: rgb(252, 162, 130);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="menu">
+        <h1>Love Nilsfors</h1>
+        <button id="start" data-option="about" class="menuOption">Om mig</button>
+        <button data-option="education" class="menuOption">Utbildning</button>
+        <button data-option="portfolio" class="menuOption">Portfolio</button>
+        <button data-option="knowledge" class="menuOption">Färdigheter</button>
+        <button data-option="contact" class="menuOption">Kontakt</button>
+    </div>
+
+    <div class="textContent" id="about">
+        <div id="image">
+            <img height="200" id="me" alt="me in france" src="me.jpeg">
+        </div>
+        <p>Hello, World!</p>
+        <p>Studerar för närvarande Data- och Systemvetenskap, tar gärna extrajobb, se färdigheter</p>
+        <p>Om mig{
+            <br><span class="indent">namn: Love Nilsfors</span>
+
+
+
+        </p>
+        <p>> Namn: Love Nilsfors</p>
+        <p>> Studerar: Data- och Systemvetenskap ÅR 2</p>
+        <p>> Ålder: 21</p>
+        <p>> Bor: Stockholm</p>
+    
+        
+    </div>
+
+    <div class="textContent" id="education">
+        <p><span class="course">Data- och systemvetenskap I </span>(<span class="points">30hp</span>);</p>
+        <p><span class="course">Introduktion till data- och systemvetenskap </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">ITO </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Objektorienterad analys och design </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Programmering 1 </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Data- och systemvetenskap II </span>(<span class="points">30hp</span>);</p>
+        <p><span class="course">HCI & UX, 7.5hp </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Databasmetodik </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Programmering 2 </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Datorsystem </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Data- och systemvetenskap III </span>(<span class="points">30hp</span>);</p>
+        <p><span class="course">Logik för datavetare </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Informationsäkerhet - modeller och synsätt </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Internet of things </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Teknik för internetsökning och omvärldsbevakning </span>(<span class="points">7.5hp</span>);</p>
+        <p>Mer tillkommer!</p>        
+    </div>
+
+    <div class="textContent" id="portfolio">
+        <p>Kommer snart länk till github, där jag tänker lägga in arbeten löpande</p>
+    </div>
+
+    <div class="textContent" id="knowledge">
+        <p>Lär mig och har kunskaper inom bland annat:</p>
+        <p>Java</p>
+        <p>JavaFX</p>
+        <p>JavaScript</p>
+        <p>C & C++</p>
+        <p>Python</p>
+        <p>UML</p>
+        <p>SQL & relationsdatabaser</p>
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>node</p>
+        <p>django</p>
+        <p>Med mera, lär mig gärna nytt!</p>
+
+    </div>
+
+    <div class="textContent" id="contact">
+        <p>Mail: nilsfors@me.com</p>
+    </div>
+
+
+</body>
+</html>
