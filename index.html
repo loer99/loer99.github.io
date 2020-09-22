@@ -2,7 +2,8 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <title>Love Nilsfors</title>
+    <meta name="viewport" content="initial-scale=1">
+    <title>Love Nilsfors - systemutvecklare </title>
 
     <script>
 
@@ -34,12 +35,14 @@
         });
 
         function updateTextPosition(){
+            let adjustTextContentX = 8
             document.querySelectorAll('.textContent').forEach(text => {
+
                 text.style.left = '' + 
-                (document.querySelector('#start').getBoundingClientRect().left - 8) + 'px';
+                (document.querySelector('#start').getBoundingClientRect().left - adjustTextContentX) + 'px';
             });
             document.querySelector('#about').style.left = '' + 
-                (document.querySelector('#start').getBoundingClientRect().left - 8) + 'px';
+                (document.querySelector('#start').getBoundingClientRect().left - adjustTextContentX) + 'px';
 
         }
 
@@ -50,20 +53,39 @@
     </script>
 
     <style>
+
         *{
             font-family: Avenir, "Helvetica Neue", sans-serif;
         }
 
         h1{
-            
+            font-size: 3vw;
             font-weight: bold;
         }
 
+        h2{
+            font-size: 2vw; 
+        }
+
+        h3{
+            font-size: 1.7vw;
+        }
+
+        h2, h3 {
+            color: white;
+            background:  rgb(63, 63, 63);
+            width: max-content;
+            padding: 0.3vw;
+        }
+
+        #hello{
+            color: rgb(145, 250, 172);
+            font-size: 1.8vw;
+        }
+
         #me{
-            height: auto;
+            height: 20vw;
             width: auto;
-            max-height: 200px;
-            max-width: initial;
         }
 
         #menu{
@@ -76,9 +98,9 @@
             text-decoration: none;
             border: transparent;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 1.5vw;
             background: transparent;
-            height: 20pt;
+            height: 2.5vw;
             align-self: center;
         }
 
@@ -120,31 +142,27 @@
             animation-name: showContent;
             animation-duration: 0.4s;
             animation-fill-mode: forwards;
+
+            font-size: 1.5vw;
             position: relative;
             display: flex;
             display: none;
             text-align: left;
+            width: max-content;
         }
 
         .textContent > p {
             padding: 5px;
             font-weight: bold;
-            background: rgb(50, 50, 50);
+            background:  rgb(63, 63, 63);
             color: rgb(255, 255, 255);
-            width: fit-content;
+            width: max-content;
         }
 
         #education > p{
             color: white;
-            font-family: Avenir, "Helvetica Neue", sans-serif;
             background: rgb(63, 63, 63);
         }
-
-        .textContent > p > br{
-            text-indent: 30%;
-
-        }
-
 
         .textContent > p > .course{
         
@@ -172,13 +190,13 @@
 
     <div class="textContent" id="about">
         <div id="image">
-            <img height="200" id="me" alt="me in france" src="me.jpeg">
+            <img id="me" alt="me in france" src="me.jpeg">
         </div>
-        <p>Hello, World!</p>
-        <p>Studerar för närvarande Data- och Systemvetenskap, tar gärna extrajobb, se färdigheter</p>
+        <p id="hello">"Hello, World!"</p>
+        <p>Studerar för närvarande Data- och systemvetenskap, tar gärna extrajobb, se färdigheter</p>
         <p>Om mig: </p>
         <p>> Namn: Love Nilsfors</p>
-        <p>> Studerar: Data- och Systemvetenskap ÅR 2</p>
+        <p>> Studerar: Data- och systemvetenska, år 2</p>
         <p>> Ålder: 21</p>
         <p>> Bor: Stockholm</p>
     
@@ -186,26 +204,39 @@
     </div>
 
     <div class="textContent" id="education">
-        <p><span class="course">Data- och systemvetenskap I </span>(<span class="points">30hp</span>);</p>
+        <p>Mer tillkommer!</p> 
+        <h2>2019 - </h2>
+        <h3>Stockholms universitet: Data- och systemvetenskap III, 30hp</h3>
+        <p><span class="course">Informationsäkerhet - modeller och synsätt </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Logik för datavetare </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Teknik för internetsökning och omvärldsbevakning </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Tjänster för en uppkopplad värld</span>(<span class="points">7.5hp</span>);</p>
+        <br>
+        <h3>Stockholms universitet: Data- och systemvetenskap II, 30hp</h3>
+        <p><span class="course">Datorsystem </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Programmering 2 </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">Databasmetodik </span>(<span class="points">7.5hp</span>);</p>
+        <p><span class="course">HCI & UX, 7.5hp </span>(<span class="points">7.5hp</span>);</p>
+        <br>
+        <h3>Stockholms universitet: Data- och systemvetenskap I, 30hp</h3>
         <p><span class="course">Introduktion till data- och systemvetenskap </span>(<span class="points">7.5hp</span>);</p>
         <p><span class="course">ITO </span>(<span class="points">7.5hp</span>);</p>
         <p><span class="course">Objektorienterad analys och design </span>(<span class="points">7.5hp</span>);</p>
         <p><span class="course">Programmering 1 </span>(<span class="points">7.5hp</span>);</p>
-        <p><span class="course">Data- och systemvetenskap II </span>(<span class="points">30hp</span>);</p>
-        <p><span class="course">HCI & UX, 7.5hp </span>(<span class="points">7.5hp</span>);</p>
-        <p><span class="course">Databasmetodik </span>(<span class="points">7.5hp</span>);</p>
-        <p><span class="course">Programmering 2 </span>(<span class="points">7.5hp</span>);</p>
-        <p><span class="course">Datorsystem </span>(<span class="points">7.5hp</span>);</p>
-        <p><span class="course">Data- och systemvetenskap III </span>(<span class="points">30hp</span>);</p>
-        <p><span class="course">Logik för datavetare </span>(<span class="points">7.5hp</span>);</p>
-        <p><span class="course">Informationsäkerhet - modeller och synsätt </span>(<span class="points">7.5hp</span>);</p>
-        <p><span class="course">Internet of things </span>(<span class="points">7.5hp</span>);</p>
-        <p><span class="course">Teknik för internetsökning och omvärldsbevakning </span>(<span class="points">7.5hp</span>);</p>
-        <p>Mer tillkommer!</p>        
+        <br>
+        <h2>2019 - 2019</h2>
+        <h3>Stockholms universitet: Filmvetenskap I, 30hp</h3>
+        <br>
+        <h2>2018 - 2018</h2>
+        <h3>Visingsö folkhögskola: Franska i Aix-en-Provence</h3>
+        <br>
+        <h2>2015 - 2018</h2>
+        <h3>Globala gymansiet: Naturvetenskapliga programmet</h3>
+           
     </div>
 
     <div class="textContent" id="portfolio">
-        <p>Kommer snart länk till github, där jag tänker lägga in arbeten löpande</p>
+        <p>Kommer snart!</p>
     </div>
 
     <div class="textContent" id="knowledge">
