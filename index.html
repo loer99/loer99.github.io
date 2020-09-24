@@ -151,12 +151,13 @@
             width: max-content;
         }
 
-        .textContent > p {
-            padding: 5px;
+        p {
+            padding: 0.4vw;
             font-weight: bold;
             background:  rgb(63, 63, 63);
             color: rgb(255, 255, 255);
             width: max-content;
+            margin-right: 2vw;
         }
 
         #education > p{
@@ -172,6 +173,18 @@
         .textContent > p > .points{
         
             color: rgb(252, 162, 130);
+        }
+
+        #footer{
+            text-align: right;
+            font-size: 1.3vw;
+        }
+
+        #knowledgeContent{
+            width: 50vw;
+            display: flex;
+            flex-flow: row wrap;
+
         }
 
     </style>
@@ -231,7 +244,7 @@
         <h3>Visingsö folkhögskola: Franska i Aix-en-Provence</h3>
         <br>
         <h2>2015 - 2018</h2>
-        <h3>Globala gymansiet: Naturvetenskapliga programmet</h3>
+        <h3>Globala gymnasiet: Naturvetenskapliga programmet</h3>
            
     </div>
 
@@ -240,26 +253,32 @@
     </div>
 
     <div class="textContent" id="knowledge">
-        <p>Lär mig och har kunskaper inom bland annat:</p>
-        <p>Java</p>
-        <p>JavaFX</p>
-        <p>JavaScript</p>
-        <p>C & C++</p>
-        <p>Python</p>
-        <p>UML</p>
-        <p>SQL & relationsdatabaser</p>
-        <p>HTML</p>
-        <p>CSS</p>
-        <p>node</p>
-        <p>django</p>
+        <h2>Lär mig och har kunskaper inom bland annat:</h2>
+        <div id="knowledgeContent">
+            <div><p>Java</p></div>
+            <div><p>JavaFX</p></div>
+            <div><p>JavaScript</p></div>
+            <div><p>C & C++</p></div>
+            <div><p>Python</p></div>
+            <div><p>UML</p></div>
+            <div><p>SQL & relationsdatabaser</p></div>
+            <div><p>HTML</p></div>
+            <div><p>CSS</p></div>
+            <div><p>node</p></div>
+            <div><p>django</p></div>
+        </div>
+        
         <p>Med mera, lär mig gärna nytt!</p>
 
     </div>
 
     <div class="textContent" id="contact">
-        <p>Mail: nilsfors@me.com</p>
+        <h3>Mail: nilsfors@me.com</h3>
     </div>
 
+    <div id="footer">
+        <h4>Sidan senast uppdaterad: 23 september 2020</h4>
+    </div>
 
 </body>
 </html>
