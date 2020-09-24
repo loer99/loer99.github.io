@@ -18,7 +18,14 @@
             });
             button.style.color = 'rgb(255, 255, 255)';
             button.style.background = 'rgb(0, 0, 0)';
+            if (option === 'about'){
+                document.querySelector('#helloFunction').innerHTML = 
+                "<span id=\"hello\"></span><span id=\"mark\"></span>";
+            }
             document.querySelector('#' + (option)).style.display = 'block';
+            if (option === 'about'){
+                printHelloFunction();
+            }
         }
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -49,6 +56,27 @@
         document.addEventListener('DOMContentLoaded', function(){
             window.addEventListener('resize', updateTextPosition)
         });
+
+        function printHelloFunction(){
+            const timeDelay = 170;
+
+            function print(message){
+                let currentLetter = 0;
+
+                let printLetter = function(){
+                    if (currentLetter < message.length){
+                        let letter = message[currentLetter];
+
+                        document.querySelector('#hello').innerHTML += letter;
+                    }
+                    currentLetter++;
+                    setTimeout(printLetter, timeDelay);
+                }
+                printLetter();
+            }
+            print("\"Hello, World!\"");
+            document.querySelector('#mark').innerHTML = "_"
+        }
         
     </script>
 
@@ -78,9 +106,16 @@
             padding: 0.3vw;
         }
 
-        #hello{
+        #hello, #mark, #helloFunction{
+            font-size: 1.9vw;
+        }
+
+        #hello, #mark{
             color: rgb(145, 250, 172);
-            font-size: 1.8vw;
+        }
+
+        #helloFunction{
+            color: turquoise;
         }
 
         #me{
@@ -111,6 +146,26 @@
             animation-fill-mode: forwards;
             background: black;
 
+        }
+
+        #mark{
+            animation-name: pulse;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes pulse {
+            
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            0% {
+                opacity: 0;
+            }
         }
 
         @keyframes colorFeedBack {
@@ -216,7 +271,7 @@
         <div id="image">
             <img id="me" alt="me in france" src="me.jpeg">
         </div>
-        <p id="hello">"Hello, World!"</p>
+        <p id="helloFunction"><span id="hello"></span><span id="mark"></span></p>
         <p>Studerar för närvarande Data- och systemvetenskap, tar gärna extrajobb, se färdigheter</p>
         <p>Om mig: </p>
         <p>> Namn: Love Nilsfors</p>
@@ -268,14 +323,14 @@
         <div id="knowledgeContent">
             <div><p class="area">Java</p></div>
             <div><p class="area">JavaFX</p></div>
-            <div><p class="area">JavaScript</p></div>
+            <div><p class="area">Javascript</p></div>
             <div><p class="area">C & C++</p></div>
             <div><p class="area">Python</p></div>
             <div><p class="area">UML</p></div>
             <div><p class="area">SQL & relationsdatabaser</p></div>
             <div><p class="area">HTML</p></div>
             <div><p class="area">CSS</p></div>
-            <div><p class="area">node</p></div>
+            <div><p class="area">Node.js</p></div>
             <div><p class="area">django</p></div>
         </div>
         
@@ -284,13 +339,13 @@
     </div>
 
     <div class="textContent" id="contact">
-        <h3>Mail: nilsfors@me.com</h3>
+        <h3>e-post: nilsfors@me.com</h3>
         <h3>linkedin: <a href="www.linkedin.com/in/love-eriksson-nilsfors">
             www.linkedin.com/in/love-eriksson-nilsfors</a></h3>
     </div>
 
     <div id="footer">
-        <h4>Sidan senast uppdaterad: 23 september 2020</h4>
+        <h4>Sidan senast uppdaterad: 24 september 2020</h4>
     </div>
 
 </body>
